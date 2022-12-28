@@ -1,0 +1,66 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+  display: flex;
+}
+
+.dice {
+  width: 100%;
+  height: 100%;
+  margin: 100px;
+  position: absolute;
+  transform-style: preserve-3d;
+
+  animation: roll 3s infinite forwards linear;
+}
+
+@keyframes roll {
+  from {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+  to {
+    transform: rotateY(-360deg) rotateX(0deg);
+  }
+}
+
+.dice > div {
+  width: 200px;
+  height: 200px;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  color: black;
+}
+
+.front {
+  background: rgba(255, 135, 135, 0.8);
+  transform: translateZ(100px);
+}
+.back {
+  background-color: rgba(249, 249, 125, 0.8);
+  transform: rotateY(180deg) translateZ(100px);
+}
+.left {
+  background-color: rgba(131, 255, 131, 0.8);
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.right {
+  background-color: rgba(255, 215, 141, 0.8);
+  transform: rotateY(90deg) translateZ(100px);
+}
+.top {
+  background-color: rgba(121, 121, 255, 0.8);
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  background-color: rgba(255, 139, 255, 0.8);
+  transform: rotateX(-90deg) translateZ(100px);
+}
